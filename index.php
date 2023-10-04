@@ -39,7 +39,8 @@ include("db.php");
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Telefono</th>
-        <th>Activacion</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
       </tr>
     </thead>
     <tbody>
@@ -54,7 +55,9 @@ include("db.php");
   <td><?php echo $row['telefono'] ?></td>
   <td>
     <a href="editar.php?id=<?php echo $row['id']?>"> Editar</a>
-    <a href="eliminar.php?id=<?php echo $row['id']?>"> Eliminar</a>
+  </td>
+  <td>
+  <a href="eliminar.php?id=<?php echo $row['id']?>"> Eliminar</a>
   </td>
 </tr>
 
