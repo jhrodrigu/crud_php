@@ -15,4 +15,10 @@ $conn = mysqli_connect(
 //   echo 'Conexion exitosa';
 // }
 
+
+/*
+nombre de la tabla = chud_php
+nombre de las columnas= nombre, apellido, telefono
+*/ 
+
 ?>
