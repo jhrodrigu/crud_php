@@ -14,6 +14,11 @@ include("db.php");
 <body>
   <h1>Creacion de un CRUD en PHP</h1>
 
+  <?php if (isset($_SESSION['message'])) { ?>
+    <?= $_SESSION['message'] ?>
+  <?php session_unset();
+  } ?>
+
   <form action="guardar.php" method="post">
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" value="">
@@ -26,6 +31,38 @@ include("db.php");
     <br>
     <input type="submit" name="guardar" value="Guardar">
   </form>
+  <br>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Telefono</th>
+        <th>Activacion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      $query = "SELECT * FROM personal";
+      $result_tabla = mysqli_query($conn, $query);
+
+       while($row =mysqli_fetch_array($result_tabla)) {?>
+<tr>
+  <td><?php echo $row['nombre'] ?></td>
+  <td><?php echo $row['apellido'] ?></td>
+  <td><?php echo $row['telefono'] ?></td>
+  <td>
+    <a href="editar.php?id=<?php echo $row['id']?>"> Editar</a>
+    <a href="eliminar.php?id=<?php echo $row['id']?>"> Eliminar</a>
+  </td>
+</tr>
+
+<?php }?>
+
+      
+    </tbody>
+  </table>
 
 </body>
 

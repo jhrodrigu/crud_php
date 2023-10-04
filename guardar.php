@@ -15,7 +15,9 @@ if(isset($_POST['guardar'])){
     die('falla de conexion');
   };
 
-  echo 'guardado';
+  $_SESSION['message'] = 'Se aguardado satisfactoriamente';
+
+   header("Location: index.php");
 
 
 }

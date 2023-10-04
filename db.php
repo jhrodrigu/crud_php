@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $conn = mysqli_connect(
   'localhost',
   'root',
@@ -7,6 +9,8 @@ $conn = mysqli_connect(
   'crud_php'
 );
 
+
+//VALIDAR DE QUE LA CONEXION FUNCIONA
 // if(isset($conn)){
 //   echo 'Conexion exitosa';
 // }
